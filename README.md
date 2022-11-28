@@ -3,8 +3,9 @@ General Information about Digital Certificates and Example Self Signed Certifica
 
 Public key certificate, also known as a digital certificate or identity certificate, is an software document used to prove the validity of a public key. The certificate includes information about the public key, information about the identity of its owner (called the subject), and the digital signature of an entity that has verified the certificate's contents (called the issuer). If the signature is valid, and the software examining the certificate trusts the issuer, then it can use that key to communicate securely with the certificate's subject.
  
- 
-                                   The roles of root certificate, intermediate certificate and end-entity certificate as in the chain of trust.
+ ![image](https://user-images.githubusercontent.com/101481631/204348593-7d68954e-dd8a-453e-8394-8418f9839dca.png)
+
+                            The roles of root certificate, intermediate certificate and end-entity certificate as in the chain of trust.
  
 Good example for understanding the Trust Chain and certificate Creation is self-signed certificates.
  
@@ -12,7 +13,8 @@ Self-Signed Certificates
 A self-signed certificate is not signed by a public or private certificate authority. Instead, it is signed by the creator’s own personal or root CA certificate.
 Here is what we do to request paid certificate from a well-known Certificate Authority like DigiCert, Verisign or comodo.
  
- 
+ ![image](https://user-images.githubusercontent.com/101481631/204348469-d7a97f95-834b-4570-97a1-7a5aaffd0645.png)
+
 1.	Create a certificate signing request (CSR) with a private key. A CSR contains details about location, organization, and FQDN (Fully Qualified Domain Name).
 2.	Send the CSR to the trusted CA authority.
 3.	The CA authority will send you the certificate signed by their root certificate authority and private key.
