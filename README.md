@@ -42,11 +42,13 @@ Creating Self Signed Certificate (without Intermediate Certificate - Just Root C
  
 Note: A serial number will be generated automatically while Root CA signs the End Entity certificate.  This serial number is used to uniquely identify a signed certificate and added to End Entity certificate under Serial Number Section. 
  
-Below is a batch script to execute all given steps with openSsl :
+A batch script to execute all given steps with openSsl in code:
  
 OpenSSL is a software library for using crypto algorithms, protocols and secure communications.
  
-You can download the latest version of openssl from here.
+You can download the latest version of openssl from:
+
+https://www.openssl.org/source/
  
 Set the identification and domain data in .conf files (if needed?) and double click SelfSignedCertGenerate.bat file. You can trace the chain of trust by inspecting the generated .txt files.
 -
