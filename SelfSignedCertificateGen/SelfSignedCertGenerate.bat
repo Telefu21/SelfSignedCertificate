@@ -32,9 +32,9 @@ if not exist GeneratedFiles\ (
   mkdir GeneratedFiles
 )
 
-mv *.crt GeneratedFiles/
-mv *.csr GeneratedFiles/
-mv *.key GeneratedFiles/
+move *.crt GeneratedFiles/
+move *.csr GeneratedFiles/
+move *.key GeneratedFiles/
 
 :: To build up more understanding, convert the generated files to human readable text format
 
