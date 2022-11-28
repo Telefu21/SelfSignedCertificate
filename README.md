@@ -1,10 +1,8 @@
-# SelfSignedCertificate
-General Information about Digital Certificates and Example Self Signed Certificate Generation 
+# Self Signed Certificates
 
 Public key certificate, also known as a digital certificate or identity certificate, is an software document used to prove the validity of a public key. The certificate includes information about the public key, information about the identity of its owner (called the subject), and the digital signature of an entity that has verified the certificate's contents (called the issuer). If the signature is valid, and the software examining the certificate trusts the issuer, then it can use that key to communicate securely with the certificate's subject.
  
  ![image](https://user-images.githubusercontent.com/101481631/204348593-7d68954e-dd8a-453e-8394-8418f9839dca.png)
-
                             The roles of root certificate, intermediate certificate and end-entity certificate as in the chain of trust.
  
 Good example for understanding the Trust Chain and certificate Creation is self-signed certificates.
@@ -42,7 +40,9 @@ Creating Self Signed Certificate (without Intermediate Certificate - Just Root C
  
 Note: A serial number will be generated automatically while Root CA signs the End Entity certificate.  This serial number is used to uniquely identify a signed certificate and added to End Entity certificate under Serial Number Section. 
  
-A batch script to execute all given steps with openSsl in code:
+## Self Signed Certificate Generation Example
+
+A batch script to execute all given steps with openSsl is given in code section.
  
 OpenSSL is a software library for using crypto algorithms, protocols and secure communications.
  
@@ -51,17 +51,19 @@ You can download the latest version of openssl from:
 https://www.openssl.org/source/
  
 Set the identification and domain data in .conf files (if needed?) and double click SelfSignedCertGenerate.bat file. You can trace the chain of trust by inspecting the generated .txt files.
--
+
+  
+###  Example Certificate file content (Base 64 Ascii Encoded) generated with openssl
  
- 
------------------------------- Example Certificate file content (Base 64 Ascii Encoded) generated with openssl ------------------------------------------------
- 
------BEGIN CERTIFICATE-----
+BEGIN CERTIFICATE
+
 MIIEIzCCAwsCFAjQDPeZ40T3wV9uaVdzr4LibGHYMA0GCSqGSIb3DQEBCwUAMIHU
 MQswCQYDVQQGEwJVSzEQMA4GA1UECAwHQ0FTdGF0ZTETMBEGA1UEBwwKQ0FMb2Nh
 dGlvbjEXMBUGA1UECgwOQ0FPcmdhbmlzYXRpb24xHzAdBgNVBAsMFkNBIE9yZ2Fu
 aXNhdGlvbmFsIFVuaXQxHTAbBgkqhkiG9w0BCQEWDkNBZW1haWxBZGRyZXNzMUUw
+
 QwYDVQQDDDxDQSBGdWxseSBRdWFsaWZpZWQgRG9tYWluIE5hbWUgKElQIEFkZHJl
+
 c3MsRG9tYWluIE5hbWUgZXRjLikwHhcNMjIxMTE3MTQzOTAwWhcNMjMxMTE3MTQz
 OTAwWjCBxjELMAkGA1UEBhMCVUsxDjAMBgNVBAgMBVN0YXRlMREwDwYDVQQHDAhM
 b2NhdGlvbjEVMBMGA1UECgwMT3JnYW5pc2F0aW9uMRwwGgYDVQQLDBNPcmdhbmlz
@@ -80,9 +82,10 @@ OAYxiHGUDtCRy8R87od6+oV2qMAg1QL6Mlq/sJ5VBsZR7WOyqh8KMrnmVT0xM6Qs
 1/pVSzoKU/R9wEcugCjOhm3GsrzWCtoPg5c3zlJrcop/bQ07xoBiVQDJO7n/9dd7
 EF6vba6mQsH+fYOzEg96guMws2diMCFrUP4asP/Vb7SE1wB6cTilYW6bi+f3ZRTV
 UamKsfFVxw==
------END CERTIFICATE-----
+
+END CERTIFICATE
  
-----------------------------------------------------  Human readable form of Digital Certificate Example ---------------------------------------------------------------
+### Human readable form of Digital Certificate Example
  
 Certificate:
     Data:
@@ -134,6 +137,3 @@ Certificate:
          20:06:31:12:e2:ce:61:2e:02:92:a9:05:21:3a:f2:d2:5d:9b:
          c5:b2:66:ce:0c:0c:3b:96:33:e3:28:ee:6c:9b:2d:13:85:e5:
          8f:59:25:a8
- 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 
