@@ -1,4 +1,4 @@
-# Self Signed Certificates
+# Digital Certificates
 
 Public key certificate, also known as a digital certificate or identity certificate, is an software document used to prove the validity of a public key. The certificate includes information about the public key, information about the identity of its owner (called the subject), and the digital signature of an entity that has verified the certificate's contents (called the issuer). If the signature is valid, and the software examining the certificate trusts the issuer, then it can use that key to communicate securely with the certificate's subject.
  
