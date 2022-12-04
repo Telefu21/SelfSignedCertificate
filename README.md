@@ -7,9 +7,9 @@ Public key certificate, also known as a digital certificate or identity certific
  
 Good example for understanding the Trust Chain and certificate Creation is self-signed certificates.
  
-Self-Signed Certificates
+## Self-Signed Certificates
 A self-signed certificate is not signed by a public or private certificate authority. Instead, it is signed by the creator’s own personal or root CA certificate.
-Here is what we do to request paid certificate from a well-known Certificate Authority like DigiCert, Verisign or comodo.
+Here is what we do to request paid certificate from a well-known Certificate Authority like DigiCert or Verisign.
  
  ![image](https://user-images.githubusercontent.com/101481631/204348469-d7a97f95-834b-4570-97a1-7a5aaffd0645.png)
 
