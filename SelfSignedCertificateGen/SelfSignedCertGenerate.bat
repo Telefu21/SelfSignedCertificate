@@ -26,24 +26,31 @@ openssl x509 -req -in selfSignedCrt.csr -CA rootCA.crt -CAkey rootCA.key -CAcrea
 
 del *.srl	
 
-:: move all the generated files to a specific folder
+:: Verify the selfsigned Certificate with CA
 
-if not exist GeneratedFiles\ (
-  mkdir GeneratedFiles
-)
-
-move *.crt GeneratedFiles/
-move *.csr GeneratedFiles/
-move *.key GeneratedFiles/
+openssl verify -CAfile rootCA.crt selfSignedCrt.crt
 
 :: To build up more understanding, convert the generated files to human readable text format
-
-cd GeneratedFiles
 
 openssl rsa  -in rootCA.key 		-text -out rootCAKey.txt
 openssl x509 -in rootCA.crt 		-text -out rootCACrt.txt
 openssl rsa  -in selfSignedCrt.key 	-text -out selfSignedCrtKey.txt
 openssl req  -in selfSignedCrt.csr 	-text -out selfSignedCrtCsr.txt
 openssl x509 -in selfSignedCrt.crt 	-text -out selfSignedCrtCrt.txt
+
+:: move all the generated files to specific folders
+
+if not exist CertificateFiles\ (
+  mkdir CertificateFiles
+)
+
+if not exist TextFiles\ (
+  mkdir TextFiles
+)
+
+move *.crt CertificateFiles/
+move *.csr CertificateFiles/
+move *.key CertificateFiles/
+move *.txt TextFiles/
 
 pause
